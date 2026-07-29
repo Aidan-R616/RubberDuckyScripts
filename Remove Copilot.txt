@@ -10,9 +10,6 @@ SHIFT TAB
 DELAY 500
 ENTER
 DELAY 1500
-STRING Get-AppxPackage *Windows.Copilot* | Remove-AppxPackage
-ENTER
-DELAY 5000
-STRING Get-AppxPackage *Microsoft.Copilot* | Remove-AppxPackage
+STRING STRING Get-AppxPackage -AllUsers *Microsoft.Copilot* ^| ForEach-Object { Remove-AppxPackage -Package $_.PackageFullName -AllUsers }
 ENTER
 
