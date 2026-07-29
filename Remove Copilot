@@ -1,0 +1,16 @@
+REM This Uninstalls Copilot
+DELAY 1000
+    
+GUI r
+DELAY 200
+STRING powershell 
+CTRL-SHIFT ENTER
+DELAY 400
+LEFT
+DELAY 150
+ENTER
+
+
+STRING Get-AppxPackage *Windows.Copilot* | Remove-AppxPackage
+DELAY 1000
+Get-AppxPackage *Microsoft.Copilot* | Remove-AppxPackage
