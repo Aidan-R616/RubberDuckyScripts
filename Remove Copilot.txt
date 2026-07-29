@@ -14,5 +14,5 @@ STRING Get-AppxPackage -AllUsers *Microsoft.Copilot* ^| ForEach-Object { Remove-
 ENTER
 DELAY 10000
 REM Remove the provisioned package so it won't be installed for new users
-STRING Get-AppxProvisionedPackage -Online ^| Where-Object { $_.DisplayName -like "*Microsoft.Copilot*" } ^| ForEach-Object { Remove-AppxProvisionedPackage -Online -PackageName $_.PackageName }
+STRING Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -like "*Microsoft.Copilot*" } ^| ForEach-Object { Remove-AppxProvisionedPackage -Online -PackageName $_.PackageName }
 ENTER
